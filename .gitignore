@@ -1,0 +1,14 @@
+# env file
+.env
+
+# Editor/IDE
+.idea/
+.vscode/
+
+.tmp/
+
+# no builds
+*.exe
+
+# no inner docs
+notes.txt
