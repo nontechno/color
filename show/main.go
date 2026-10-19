@@ -173,11 +173,10 @@ func detect(chunks <-chan []byte) (int, string, Probe) {
 	p := probeTerminal(chunks, 250*time.Millisecond)
 	switch {
 	case p.Truecolor:
-		d, note = depthTrue, "truecolor (confirmed by the terminal)"
+		d, note = depthTrue, "confirmed by the terminal"
 	case p.Answered && d == depthTrue:
-		d, note = depth256, "256 colors (terminal does not confirm truecolor)"
+		d, note = depth256, "terminal does not confirm truecolor"
 	case p.Answered:
-		note = "256 colors (" + note + ")"
 	}
 	return d, note, p
 }
